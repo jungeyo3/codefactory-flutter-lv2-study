@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:actual/common/const/data.dart';
 import 'package:actual/common/dio/dio.dart';
 import 'package:actual/common/layout/default_layout.dart';
@@ -36,8 +38,6 @@ class _RestaurantDetailScreenState
   Widget build(BuildContext context) {
     final state = ref.watch(restaurantDetailProvider(widget.id));
     final ratingState = ref.watch(restaurantRatingRepositoryProvider(widget.id));
-
-    print(ratingState);
 
     if (state == null) {
       return DefaultLayout(
